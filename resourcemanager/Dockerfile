@@ -9,4 +9,13 @@ RUN chmod a+x /run.sh
 
 EXPOSE 8088
 
+RUN sed -i 's/http:\/\/archive\.debian\.org\/debian/https:\/\/deb.debian.org\/debian/g' /etc/apt/sources.list
+
+RUN sed -i 's/stretch/buster/g' /etc/apt/sources.list
+
+RUN apt update
+RUN apt install -y --no-install-recommends \
+  python3 python3-pip \
+  nano
+
 CMD ["/run.sh"]

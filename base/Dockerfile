@@ -1,17 +1,19 @@
-FROM debian:9
+FROM debian:stable
 
 MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
 MAINTAINER Giannis Mouchakis <gmouchakis@iit.demokritos.gr>
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-      openjdk-8-jdk \
-      net-tools \
-      curl \
-      netcat \
-      gnupg \
-      libsnappy-dev \
-    && rm -rf /var/lib/apt/lists/*
-      
+    openjdk-8-jdk \
+    net-tools \
+    nano \
+    python3 \
+    python3-pip \
+    curl \
+    netcat \
+    gnupg \
+    libsnappy-dev
+
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 
 RUN curl -O https://dist.apache.org/repos/dist/release/hadoop/common/KEYS
