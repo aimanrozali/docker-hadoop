@@ -2,7 +2,7 @@ version: "3"
 
 services:
   namenode:
-    image: custom/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    image: amnrz/hadoop-namenode:v1
     container_name: namenode
     restart: always
     ports:
@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile
 
   datanode:
-    image: custom/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    image: amnrz/hadoop-datanode:v1
     container_name: datanode
     restart: always
     volumes:
@@ -33,7 +33,7 @@ services:
       dockerfile: Dockerfile
 
   resourcemanager:
-    image: custom/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8
+    image: amnrz/hadoop-resourcemanager:v1
     container_name: resourcemanager
     restart: always
     environment:
@@ -45,7 +45,7 @@ services:
       dockerfile: Dockerfile
 
   nodemanager1:
-    image: custom/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
+    image: amnrz/hadoop-nodemanager:v1
     container_name: nodemanager
     restart: always
     environment:
@@ -57,7 +57,7 @@ services:
       dockerfile: Dockerfile
 
   historyserver:
-    image: custom/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
+    image: amnrz/hadoop-historyserver:v1
     container_name: historyserver
     restart: always
     environment:
